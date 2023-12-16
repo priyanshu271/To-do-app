@@ -1,44 +1,47 @@
-
-  
-  .container {
+.container {
     background-color: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 25px 6px rgba(0, 0, 0, 0.19);
-    position: relative; /* Adjust position for stacking context */
-    z-index: 1; /* Ensure content is above the background */
-  }
+    position: relative;
+    /* Adjust position for stacking context */
+    z-index: 1;
+    /* Ensure content is above the background */
+}
 
-  header{
+header {
     color: #f0f0f0;
     font: 1em sans-serif;
     margin-bottom: 20px;
-  }
-  
-  .tasks-count{
+}
+
+.tasks-count {
     color: #f0f0f0;
-  }
-  .input-field {
+}
+
+.input-field {
     display: flex;
     align-items: center;
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 8px;
     margin-bottom: 20px;
-  }
-  
-  input[type="text"] {
+}
+
+input[type="text"] {
     flex: 1;
     padding: 12px;
     border: none;
     border-radius: 6px;
     font-size: 16px;
     outline: none;
-    background-color: transparent; /* Transparent input field */
-  }
-  
-  button {
-    background-color: #6c5ce7; /* Purple button */
+    background-color: transparent;
+    /* Transparent input field */
+}
+
+button {
+    background-color: #6c5ce7;
+    /* Purple button */
     color: white;
     border: none;
     border-radius: 8px;
@@ -47,100 +50,110 @@
     font-size: 16px;
     outline: none;
     transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #4b3cb2; /* Darker purple on hover */
-  }
-  
-  .task-item {
+}
+
+button:hover {
+    background-color: #4b3cb2;
+    /* Darker purple on hover */
+}
+
+.task-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 0;
     border-bottom: 1px solid #ddd;
-    opacity: 0; /* Initially set opacity to 0 */
-    transition: opacity 0.5s ease; /* Apply transition effect */
-  }
-  
-  .task-name {
+    opacity: 0;
+    /* Initially set opacity to 0 */
+    transition: opacity 0.5s ease;
+    /* Apply transition effect */
+}
+
+.task-name {
     font-size: 24px;
     color: #333;
     font-family: freehand;
-  }
-  .buttons {
+}
+
+.buttons {
     display: flex;
     gap: 5px;
-  }
-  .buttons button {
+}
+
+.buttons button {
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.3s ease;
-   padding: 5px;
-  }
-  
-  .buttons button:hover {
-    background-color: #f0f0f0; /* Lighter background on hover */
+    padding: 5px;
+}
+
+.buttons button:hover {
+    background-color: #f0f0f0;
+    /* Lighter background on hover */
     color: black
-  }
-  
-  .active {
+}
+
+.active {
     position: relative;
-  }
-  
-  .active::before {
+}
+
+.active::before {
     content: '';
     position: absolute;
     bottom: 38%;
     left: 0;
     width: 100%;
-    height:1px;
+    height: 1px;
     background-image: linear-gradient(to right, red, red),
-                      linear-gradient(to right, transparent, transparent);
+        linear-gradient(to right, transparent, transparent);
     background-size: 100% 5px, 100% 5px;
     background-position: 0 50%, 0 50%;
     background-repeat: no-repeat;
     animation: strikeout 0.5s linear forwards;
-  }
-  .isError{
+}
+
+.isError {
     color: red;
     font-size: 16px !important;
-  }
-  .input-error{
-border: 5px red solid;
-  }
+}
 
- .loader {
-  width: 50px;
-  height: 50px;
+.input-error {
+    border: 5px red solid;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
 }
 
 .background {
-  fill: none;
-  stroke: #eee; /* Background circle color */
-  stroke-width: 5;
+    fill: none;
+    stroke: #eee;
+    /* Background circle color */
+    stroke-width: 5;
 }
 
 .progress {
-  fill: none;
-  stroke: #6c5ce7; /* Progress circle color */
-  stroke-width: 5;
-  stroke-dasharray: 125;
-  stroke-dashoffset: 0;
-  transition: stroke-dashoffset 0.5s ease-in-out;
+    fill: none;
+    stroke: #6c5ce7;
+    /* Progress circle color */
+    stroke-width: 5;
+    stroke-dasharray: 125;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s ease-in-out;
 }
 
-  
-  
-  
-  @keyframes strikeout {
+
+
+
+@keyframes strikeout {
     from {
-      background-size: 0% 5px, 100% 5px;
+        background-size: 0% 5px, 100% 5px;
     }
+
     to {
-      background-size: 100% 5px, 100% 5px;
+        background-size: 100% 5px, 100% 5px;
     }
-  }
-  
+}

@@ -2,32 +2,32 @@
     <header>My Tasks</header>
     <svg class="loader" width="50" height="50" viewBox="0 0 50 50">
         <circle class="background" cx="25" cy="25" r="20" [style.stroke]="tasksCompleted ? '#6c5ce7' : '#eee'"></circle>
-        <circle class="progress" cx="25" cy="25" r="20" [style.strokeDasharray]="tasksCompleted ? '125, 125' : dashOffset"
-          [style.stroke]="tasksCompleted ? '#6c5ce7' : '#eee'"></circle>
-      </svg>
-      
-      
+        <circle class="progress" cx="25" cy="25" r="20"
+            [style.strokeDasharray]="tasksCompleted ? '125, 125' : dashOffset"
+            [style.stroke]="tasksCompleted ? '#6c5ce7' : '#eee'"></circle>
+    </svg>
+
+
     <div class="tasks-count"> {{finishedTask}} / {{totalTasks}}</div>
 
     <div class="container">
-        <div *ngIf="isInputError"class="isError">
+        <div *ngIf="isInputError" class="isError">
             <span>Please enter a task</span>
         </div>
-      <div class="input-field"[ngClass]="isInputError ? 'input-error' : ''">
-        <input type="text" formControlName="taskName" placeholder="Add a task">
-        <button (click)="addTask()">+</button>
-      </div>
-      <div class="list-items">
-        <ng-container *ngFor="let task of taskList; let i = index">
-          <div class="task-item">
-            <span class="task-name">{{ task }}</span>
-            <div class="buttons">
-              <button (click)="deleteTask(i)">Remove</button>
-              <button (click)="strikeOut(i)" id="strike-out">Finished</button>
-            </div>
-          </div>
-        </ng-container>
-      </div>
+        <div class="input-field" [ngClass]="isInputError ? 'input-error' : ''">
+            <input type="text" formControlName="taskName" placeholder="Add a task">
+            <button (click)="addTask()">+</button>
+        </div>
+        <div class="list-items">
+            <ng-container *ngFor="let task of taskList; let i = index">
+                <div class="task-item">
+                    <span class="task-name">{{ task }}</span>
+                    <div class="buttons">
+                        <button (click)="deleteTask(i)">Remove</button>
+                        <button (click)="strikeOut(i)" id="strike-out">Finished</button>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
     </div>
-  </form>
-  
+</form>

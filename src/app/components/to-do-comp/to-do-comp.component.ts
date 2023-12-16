@@ -11,9 +11,9 @@ export class ToDoCompComponent {
   public deletedTaskList: string[] = []
   public toDoListForm: FormGroup = new FormGroup({});
   public totalTasks: number = 0;
-  public finishedTask:number=-0;
-  public isInputError:boolean=false;
-  public tasksCompleted:boolean=false;
+  public finishedTask: number = -0;
+  public isInputError: boolean = false;
+  public tasksCompleted: boolean = false;
   public dashOffset: string = '125, 125'; // Initially set to open loop
 
   public constructor(private formBuilder: FormBuilder) {
@@ -28,7 +28,7 @@ export class ToDoCompComponent {
   public addTask() {
     const taskName = document.querySelector('.task-item');
     taskName?.classList.toggle('show-delay');
-  
+
     if (!this.toDoListForm.valid) {
       this.isInputError = true;
     } else {
@@ -36,13 +36,13 @@ export class ToDoCompComponent {
       this.taskList.push(this.toDoListForm.controls['taskName'].value);
       this.totalTasks = this.taskList.length;
       console.log(this.taskList);
-  
+
       setTimeout(() => {
         const listItems = document.querySelector('.list-items');
-  
+
         if (listItems) {
           const newTaskItem = listItems.lastElementChild as HTMLElement | null;
-  
+
           if (newTaskItem) {
             // Triggering a reflow to ensure the transition starts
             // by accessing the computed style property
@@ -55,10 +55,10 @@ export class ToDoCompComponent {
     }
   }
 
-   /**
-   * Method to delete task
-   */
-   public deleteTask(index: number) {
+  /**
+  * Method to delete task
+  */
+  public deleteTask(index: number) {
     const ele = document.getElementsByClassName('task-name');
     if (this.finishedTask > 0 && ele[index].classList.contains('active')) {
       this.finishedTask--;
