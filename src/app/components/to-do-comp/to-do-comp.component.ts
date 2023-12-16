@@ -52,8 +52,8 @@ export class ToDoCompComponent {
       }, 100);
     }
   }
-  
-// Below 2 methods need modification in logic, behaviour is sligh incorrect to show completed and total tasks
+
+// Below 2 methods need modification in logic, behaviour is slight incorrect to show completed and total tasks
    /**
    * Method to delete task
    */
