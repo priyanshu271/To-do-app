@@ -1,5 +1,12 @@
 <form [formGroup]="toDoListForm">
     <header>My Tasks</header>
+    <svg class="loader" width="50" height="50" viewBox="0 0 50 50">
+        <circle class="background" cx="25" cy="25" r="20" [style.stroke]="tasksCompleted ? '#6c5ce7' : '#eee'"></circle>
+        <circle class="progress" cx="25" cy="25" r="20" [style.strokeDasharray]="tasksCompleted ? '125, 125' : dashOffset"
+          [style.stroke]="tasksCompleted ? '#6c5ce7' : '#eee'"></circle>
+      </svg>
+      
+      
     <div class="tasks-count"> {{finishedTask}} / {{totalTasks}}</div>
 
     <div class="container">

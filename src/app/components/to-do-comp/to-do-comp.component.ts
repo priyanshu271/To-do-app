@@ -12,7 +12,9 @@ export class ToDoCompComponent {
   public toDoListForm: FormGroup = new FormGroup({});
   public totalTasks: number = 0;
   public finishedTask:number=-0;
-  public isInputError:boolean=false
+  public isInputError:boolean=false;
+  public tasksCompleted:boolean=false;
+  public dashOffset: string = '125, 125'; // Initially set to open loop
 
   public constructor(private formBuilder: FormBuilder) {
     this.toDoListForm = this.formBuilder.group({
@@ -53,13 +55,12 @@ export class ToDoCompComponent {
     }
   }
 
-// Below 2 methods need modification in logic, behaviour is slight incorrect to show completed and total tasks
    /**
    * Method to delete task
    */
    public deleteTask(index: number) {
-    // Adjusting the logic to update finishedTask and totalTasks
-    if (this.finishedTask > 0) {
+    const ele = document.getElementsByClassName('task-name');
+    if (this.finishedTask > 0 && ele[index].classList.contains('active')) {
       this.finishedTask--;
     }
     this.totalTasks--;
@@ -72,12 +73,12 @@ export class ToDoCompComponent {
    */
   public strikeOut(index: number) {
     const ele = document.getElementsByClassName('task-name');
-    if (!ele[index].classList.contains('active')) {
-      this.finishedTask++;
-    } else {
-      this.finishedTask--;
-    }
+    // Toggle the 'active' class
     ele[index].classList.toggle('active');
+    // Update tasksCompleted based on finishedTask and totalTasks
+    this.finishedTask = document.querySelectorAll('.task-name.active').length;
+    this.tasksCompleted = this.finishedTask === this.totalTasks;
+    this.dashOffset = '0, 125'; // Full circle when all tasks are completed
   }
 }
 
