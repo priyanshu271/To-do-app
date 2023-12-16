@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ToDoCompComponent } from './components/to-do-comp/to-do-comp.component';
+// import { ToDoCompComponent } from './components/to-do-comp/to-do-comp.component';
 
 const routes: Routes = [{
-  path:'to-do',component:ToDoCompComponent
+  // path:'to-do',component:ToDoCompComponent
 }];
 
 @NgModule({
