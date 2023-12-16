@@ -1,0 +1,125 @@
+
+  
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 25px 6px rgba(0, 0, 0, 0.19);
+    position: relative; /* Adjust position for stacking context */
+    z-index: 1; /* Ensure content is above the background */
+  }
+
+  header{
+    color: #f0f0f0;
+    font: 1em sans-serif;
+    margin-bottom: 20px;
+  }
+  
+  .tasks-count{
+    color: #f0f0f0;
+  }
+  .input-field {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    background-color: transparent; /* Transparent input field */
+  }
+  
+  button {
+    background-color: #6c5ce7; /* Purple button */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #4b3cb2; /* Darker purple on hover */
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #ddd;
+    opacity: 0; /* Initially set opacity to 0 */
+    transition: opacity 0.5s ease; /* Apply transition effect */
+  }
+  
+  .task-name {
+    font-size: 18px;
+    color: #333;
+  }
+  .buttons {
+    display: flex;
+    gap: 5px;
+  }
+  .buttons button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+   padding: 5px;
+  }
+  
+  .buttons button:hover {
+    background-color: #f0f0f0; /* Lighter background on hover */
+    color: black
+  }
+  
+  .active {
+    position: relative;
+  }
+  
+  .active::before {
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right, red, red),
+                      linear-gradient(to right, transparent, transparent);
+    background-size: 100% 5px, 100% 5px;
+    background-position: 0 50%, 0 50%;
+    background-repeat: no-repeat;
+    animation: strikeout 0.5s linear forwards;
+  }
+  .isError{
+    color: red;
+    font-size: 16px !important;
+  }
+  .input-error{
+border: 5px red solid;
+  }
+  .show-delay{
+   
+  }
+  
+  @keyframes strikeout {
+    from {
+      background-size: 0% 5px, 100% 5px;
+    }
+    to {
+      background-size: 100% 5px, 100% 5px;
+    }
+  }
+  
