@@ -26,9 +26,6 @@ export class ToDoCompComponent {
    * Method to add new task 
    */
   public addTask() {
-    const taskName = document.querySelector('.task-item');
-    taskName?.classList.toggle('show-delay');
-
     if (!this.toDoListForm.valid) {
       this.isInputError = true;
     } else {
